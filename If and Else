@@ -1,0 +1,145 @@
+#include <stdio.h>
+int main (void) {
+//exemplo 1:
+// if(media=>6){
+//   printf("aprovado");
+//   printf("parabéns! fez o mínimo!!!");
+  
+// }
+// else{
+//   printf("reprovado");
+  
+// }
+//  if(media>=5 && <6){
+//   printf("rec");
+  
+// }
+// if(media<5){
+//   printf("reprovado");
+// }
+//
+// exemplo 2
+//  if(media=>6){
+//    printf("aprovado");
+// }
+// else{
+//   if(media>+5){
+//     printf("recuperação");
+//   }
+//   else{
+//     printf("reprovado");
+//   }
+  
+// char sexo;
+// printf("digite seu sexo m-masculino, f-feminino, o-outros: ");
+// scanf(" %c", &sexo);
+  
+// if(sexo == 'm' || sexo == 'M'){ 
+//   printf("sexo masculino");
+// }
+// else{
+//   if(sexo =='f' || sexo == 'F');
+//   printf("sexo feminino");
+// }
+
+// int numero = 0;
+//   printf("digite um número");
+//   scanf("%d", &numero);
+// if(numero % 2 == 0){
+//   printf("%d é par", numero);
+// }
+// else{
+//   print("%d é impar", numero);
+// }
+  
+//anotações:
+// const float = constante; em algum momento pode mudar; exemplo: um valor que vai ser taxado
+
+// float altura = 0;
+// char sexo;
+// float pesoIdeal = 0;
+  
+// printf("digite sua altura:");
+// scanf("%f", &altura);
+// printf("digite seu sexo (m-masculino,f-feminino):");
+// scanf(" %c", &sexo);
+
+// pesoIdeal = sexo =='m'? (72.7 * altura) - 58: (62.1 * altura) - 44.7;
+
+  // char categoria;
+
+  // printf("Digite a categoria: ");
+  // scanf(" %c", &categoria);
+
+  // switch (categoria) {
+  //   case 'a'
+  //   :
+  //     printf("A");
+  //     break;
+  //   case 'b':
+  //     printf("B");
+  //     break;
+  //   case 'c':
+  //     printf("C");
+  //     break;
+  //   default:
+  //     printf("Inválido");
+  // }
+
+  // return 0;
+  
+  //exercicio 1: Switch
+
+//   char categoria;
+
+//   printf("digite a sua categoria:");
+//   scanf(" %c", &categoria);
+
+//   switch (categoria) {
+//     case 'a':
+//      printf("5 a 7 anos");
+//      break;
+//     case 'b':
+//      printf("8 a 11 anos");
+//      break;
+//     case 'c':
+//      printf("12 a 13 anos");
+//      break;
+//     case 'd':
+//      printf("14 a 17 anos");
+//      break;
+//     case 'e':
+//      printf("+18");
+//     default:
+//      printf("inválido");
+//   }
+//   return 0;
+// }
+  
+int codigo = 0;
+float valorFinal = 0;
+
+
+printf("digite o código do produto: ");
+scanf("%d", &codigo);
+
+switch(codigo){
+    case 100:
+      valorFinal = 1.59 *1.10;
+      printf("produto A - valor R$ %.2f", valorFinal);
+      break;
+    case 101:
+      valorFinal = 4.29 *1.10;
+      printf("produto B - valor R$ %.2f", valorFinal);
+      break;
+    case 102:
+      valorFinal = 3.29 *1.10;
+      printf("produto C - valor R$ %.2f", valorFinal);
+      break;
+    default:
+      printf("Código inválido");
+  }
+
+
+
+}

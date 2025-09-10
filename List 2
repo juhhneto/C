@@ -1,0 +1,288 @@
+Repetição determinada, Vetores, Matrizes e Strings
+Prof. Lauro Víctor
+
+1. Crie um algoritmo que, dado um número informado pelo usuário, imprima a
+tabuada dele de 1 a 10. Use o formato de apresentação (considerando que o usuário
+informou o número 5):
+
+2. Construa um programa que leia o conjunto de 20 números inteiros e mostre qual o
+maior e o menor valor fornecido.
+3. Tem-se um conjunto de dados contendo a altura e o sexo (masculino, feminino) de
+5 pessoas. Fazer um algoritmo que calcule e escreva:
+• A maior e a menor altura do grupo
+• A média de altura dos homens
+• O número de mulheres
+4. Um empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um
+novo produto lançado no mercado. Para isso, forneceu-se o sexo do entrevistado e a
+sua resposta (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, fazer um
+algoritmo que calcule e escreva:
+- O número de pessoas que responderam sim
+- O número de pessoas que responderam não
+- A percentagem de pessoas do sexo feminino que responderam sim
+- A percentagem de pessoas do sexo masculino que responderam não
+5. Cadastre um vetor de alturas de 5 pessoas e mostre a média de altura desse vetor.
+6. Cadastre um vetor de salários de 4 pessoas e mostre os salários cadastrados que
+estão abaixo da média salarial deste vetor.
+7. Cadastre a idade e altura de 5 pessoas e mostre a idade da pessoa mais alta. Utilize
+vetores.
+8. Cadastre o nome de 5 pessoas, salve em uma matriz (vetor de palavras) e depois
+percorra novamente essa matriz para informar o número de caracteres da pessoa
+com o maior nome.
+9. Pergunte o cargo de uma empresa para 5 pessoas, salve em uma matriz (vetor de
+palavras) e depois percorra novamente essa matriz para saber se o cargo “diretor”
+foi informado.
+10. Cadastre o número de habitantes e o nome de 4 estados brasileiros, salve em um
+vetor e uma matriz (vetor de palavras) respectivamente e informe o nome do estado
+informado que possui o menor número de habitantes.
+
+11. Cadastre o nome e o país de 5 pessoas, salve em matrizes (vetor de palavras) e
+depois percorra novamente essa matriz exibindo cada entrada no seguinte formato:
+nome-país.
+12. Preencha uma matriz 2x4 de salários e depois percorra novamente esta matriz
+informando qual o valor dos salários cadastrados que foram maiores que 1000.
+
+
+QUESTÃO 1:
+     int num = 0;
+     int total = 0;
+
+    printf("digite um número: ");
+    scanf("%d", &num);
+
+    for (int i = 1; i <= 10; i++){
+      total = num * i;
+      printf("%d x %d = %d \n", num, i, total);
+    }
+
+
+QUESTÃO 2:
+  int num[20];
+  int maior = 0;
+  int menor = 0;
+
+  for (int i = 0; i < 20; i++) {
+    printf("Número: ");
+    scanf("%d", &num[i]);
+    if(num[i] > menor) {
+      menor = num[i];
+    }
+    if(maior > num[i]|| maior == 0){
+      maior = num[i];
+    }
+  }
+  printf("Maior número: %d\nMenor número: %d", maior, menor);
+
+
+QUESTÃO 3:
+   float maior = 0;
+  float menor = 0;
+  float media = 0;
+  float soma = 0;
+  char sexo;
+  float altura = 0;
+  int qtdMulheres = 0;
+  int qtdHomens = 0;
+
+  for (int i = 0; i < 5; i++) {
+    printf("Digite a altura: ");
+    scanf("%f", &altura);
+    printf("Digite seu sexo(m ou f): ");
+    scanf(" %c", &sexo);
+    if (altura > maior) {
+      maior = altura;
+    }
+    if (altura < menor || menor == 0) {
+      menor = altura;
+    }
+    if(sexo == 'm'|| sexo == 'M'){
+      soma = soma + altura;
+      qtdHomens++;
+    }
+    if(sexo == 'f'|| sexo == 'F'){
+      qtdMulheres++;
+    }
+  }
+  media = soma / qtdHomens;
+  printf("\nMaior altura: %.2f\nMenor altura: %.2f\nMédia da altura dos homens: %.2f\nQuantidade de mulheres: %d", maior, menor, media, qtdMulheres);
+
+
+QUESTÃO 4:
+  char resposta;
+  char sexo;
+  int qtdS = 0;
+  int qtdN = 0;
+  float qtdF = 0;
+  float qtdM = 0;
+
+  for(int i = 0; i<10; i++){
+    printf("Digite seu sexo: ");
+    scanf(" %c", &sexo);
+    printf("Digite sua resposta (s - sim, n - não): ");
+    scanf(" %c", &resposta);
+    if(resposta == 'n'){
+      qtdN++;
+    }
+    if(resposta=='s'){
+      qtdS++;
+    }
+    if(sexo =='m' && resposta == 'n'){
+      qtdM++;
+    }
+    if(sexo =='f' && resposta == 's'){
+      qtdF++;
+    }
+  }
+  qtdF= qtdF/10;
+  qtdF= qtdF*100;
+  qtdM= qtdM/10;
+  qtdM= qtdM*100;
+  printf("\nQuantidade de pessoas que responderam sim: %d\nQuantidade de pessoas que responderam não: %d", qtdS, qtdN);
+  printf("\nPorcentagem de pessoas do sexo feminino que responderam sim: %.2f", qtdF);
+  printf("\nPorcentagem de pessoas do sexo masculino que responderam não: %.2f", qtdM);
+
+
+QUESTÃO 5:
+  int alturas[5];
+  float soma = 0;
+  float media = 0;
+
+  for(int i = 0; i<5; i++){
+    printf("Altura(em cm): ");
+    scanf("%d", &alturas[i]);
+
+    soma = soma + alturas[i];
+  }
+  media = soma/5;
+  printf("Média das alturas: %.2f", media);
+}
+
+
+QUESTÃO 6:
+float salario[4];
+float soma = 0;
+float media = 0;
+
+  for(int i = 0; i<4; i++){
+    printf("Digite seu salário: ");
+    scanf("%f", &salario[i]);
+    soma = soma + salario[i];
+  }
+  media = soma / 4;
+  printf("Abaixo da média salarial (%.2f):", media);
+  for(int i = 0; i<4; i++){
+    if(salario[i] < media){
+      printf("\n%.2f", salario[i]);
+    }
+  }
+
+
+QUESTÃO 7:
+  int idade[5];
+  int altura[5];
+  int maisAlto = 0;
+  int maisVelho = 0;
+
+  for (int i = 0; i < 5; i++) {
+    printf("\nIdade: ");
+    scanf("%d", &idade[i]);
+    printf("\nAltura(em cm): ");
+    scanf("%d", &altura[i]);
+
+    if (altura[i] > maisAlto) {
+      maisAlto = altura[i];
+      maisVelho = idade[i];
+    }
+  }
+  printf("Idade da pessoa mais alta (%d cm): %d", maisAlto, maisVelho);
+
+
+QUESTÃO 8:
+   char nomes[5][40];
+  char maiorNome[40];
+  int tamanho = 0;
+
+  for(int i =0; i<5; i++){
+    printf("Nome: ");
+    scanf("%s", nomes[i]);
+    if(strlen(nomes[i])>tamanho){
+      tamanho = strlen(nomes[i]);
+      strcpy(maiorNome, nomes[i]);
+    }
+  }
+  printf("Número de caracteres da pessoa com o maior nome (%s): %d", maiorNome, tamanho);
+
+
+QUESTÃO 9:
+  char cargo[5][50];
+  int diretor = 0;
+
+  for (int i = 0; i < 5; i++) {
+    printf("digite o seu cargo: ");
+    scanf("%s", cargo[i]);
+  }
+  for (int i = 0; i < 5; i++) {
+    if (strcmp(cargo[i], "diretor") == 0) {
+      diretor = 1;
+    }
+  }
+  if (diretor == 1) {
+    printf("\no cargo diretor foi informado");
+  }
+  if (diretor == 0) {
+    printf("\no cargo diretor não foi informado");
+  }
+
+
+QUESTÃO 10:
+  int habitantes[15];
+  char estados[4][30];
+  char menorEstado[30];
+  int menor = 0;
+
+  for (int i = 0; i < 4; i++) {
+    printf("Digite o nome do estado: ");
+    scanf("%s", estados[i]);
+    printf("Digite a quantidade de habitantes: ");
+    scanf("%d", &habitantes[i]);
+
+    if(habitantes[i]<menor|| menor == 0){
+      menor = habitantes[i];
+      strcpy(menorEstado, estados[i]);
+    }
+  }
+  printf("Estado que possui o menor número de habitantes: %s (%d habitantes)", menorEstado, menor);
+
+
+QUESTÃO 11:
+  char nome[5][40];
+  char pais[5][40];
+
+  for (int i = 0; i < 5; i++) {
+    printf("\nNome: ");
+    scanf("%s", nome[i]);
+    printf("\nPaís: ");
+    scanf("%s", pais[i]);
+  }
+  for(int i =0; i<5 ; i++){
+    printf("\n%s - %s", nome[i], pais[i]);
+  }
+
+
+QUESTÃO 12:
+  float salario[2][4];
+
+  for(int i = 0; i < 2; i++){
+    for(int j = 0; j < 4; j++){
+      printf("Digite o salário [%d][%d]: ", i + 1, j + 1);
+      scanf("%f", &salario[i][j]);
+    }
+  }
+  printf("\nSalários menores que 1000:\n");
+  for(int i = 0; i < 2; i++) {
+    for(int j = 0; j < 4; j++){
+      if(salario[i][j] < 1000){
+        printf("Posição [%d][%d]: %.2f\n", i + 1, j + 1, salario[i][j]);
+      }
+    }
+  }
+

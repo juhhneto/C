@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main(void) {
+
+//vetores:
+// int id1, id2, id3, id4, id5; ou int idade=0;
+// int idades[5]; - define a quantidade
+//"[]" indica o número de posições
+// primeiro item sempre é 0 (exemplo: em uma contagem sempre começa com 0, se colocar o número 50 como vetor, vai do 0 ao 49) 
+//
+//todas as variaveis dentro dele são do mesmo tipo
+// escolher 5 números, exibir a soma e a média deles, exibir quais números estão acima da média.
+// int idades[5];
+// int idade = 0;
+// float media = 0;
+// float soma = 0
+// for(int i =0; i<5;i++){
+//   printf("idade? ");
+//   scanf("%d", &idade);
+//   idades[i] = idade; - define a posição
+// }
+// 
+// int idades[5];
+// for(int i =0; i<i<5; i++){
+// printf("Idade? ");
+// scanf("%d", &idades[1]");
+// soma = soma + idades[1];
+// }
+//média= soma/5
+//for(int i=0; i<5; i++){
+//   if(idades[i]>media){
+//     printf("%d", idades [i]);
+//   }
+// }
+// ---------------------------------------------------------------------
+
+// exercício 1)
+//escreva um algorítmo para ler cinco valores inteiros, calcular sua média, e escrever na tela a quantidade de números abaixo da média.
+
+// int num [5];
+// int qtdNum = 0;
+// float soma = 0;
+// float media = 0;
+
+// for(int i = 0; i<5; i++){
+//   printf("Digite um número: ");
+//   scanf("%d", &num[i]);
+//   soma = soma + num[i];
+// }
+// media = soma/5;
+// printf("Média: %.2f", media);
+// for(int i = 0; i<5; i++){
+//   if(num[i]<media){
+//     qtdNum++; 
+//   }
+// }
+// printf("\nQuantidade de números abaixo de média: %d", qtdNum);
+
+//string: vetor de matérias
+//exercício 3 e exercício 4
+//[...] || i = 0) :ancora para o "menor" funcionar
+}
